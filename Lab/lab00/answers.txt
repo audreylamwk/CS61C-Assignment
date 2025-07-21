@@ -1,4 +1,28 @@
-1.
-2.
-3.
-4.
+i. Show file permissions for all files in a directory  
+    ls -l  
+ii. Move files from one directory to the next  
+    mv source_file target_directory/  
+    Example: mv myfile.txt ~/Documents/  
+iii. Change a file’s permissions   
+    chmod permissions filename  
+    Example: chmod 755 script.sh  
+iv. Show the directory you’re currently in   
+    pwd  
+v. Check if a host is online  
+    Answer:  
+    ping hostname_or_ip  
+    Example: ping google.com  
+vi. Which command walks a file hierarchy in search of a keyword?  
+    grep -r "keyword" path/  
+    Alternative (more advanced):  
+    find path/ -type f -exec grep -H "keyword" {} \;  
+vii. Which command displays information about processes running on your machine?  
+    top  
+    Or:  
+    ps aux  
+viii. Which command terminates a process?  
+    kill PID  
+    To force terminate: kill -9 PID  
+ix. Which command can help you find the difference between two files?  
+    diff file1.txt file2.txt  
+
