@@ -11,3 +11,5 @@ int main(int argc, char *argv[]) {
 
     return 0;
 }
+
+// settings set target.input-path response.txt
