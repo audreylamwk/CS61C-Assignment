@@ -27,6 +27,9 @@ Image *readData(char *filename)
 {
 	//YOUR CODE HERE
 	FILE *fp = fopen(filename, "r");
+	if (!fp) {
+		return NULL;
+	}
 	Image * image = malloc(sizeof(Image));
 	// read or skip type
 	char* type;
@@ -43,7 +46,7 @@ Image *readData(char *filename)
 	image->image = malloc(height * width * sizeof(Color *));
 	for (int i=0; i< height * width; i++) {
 		Color * cColor = malloc(sizeof(Color));
-		fscanf(fp, "%d %d %d", &cColor->R, &cColor->G, &cColor->B);
+		fscanf(fp, "%hhd %hhd %hhd", &cColor->R, &cColor->G, &cColor->B);
 		image->image[i] = cColor;
 	}
 	fclose(fp);
