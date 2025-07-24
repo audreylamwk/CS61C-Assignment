@@ -76,8 +76,9 @@ int main(int argc, char **argv)
 	if (argc != 2) {
 		return -1;
 	}
-	char * filename = malloc(strlen(argv[1]));
-	filename = argv[1];
+	// + 1 for null terminator
+	char * filename  = malloc(strlen(argv[1])+ 1);
+	strcpy(filename, argv[1]);
 	Image * image = readData(filename);
 	if (!image) {
 		return -1;
@@ -86,5 +87,6 @@ int main(int argc, char **argv)
 	writeData(newImage);
 	freeImage(image);
 	freeImage(newImage);
+	free(filename);
 	return 0;
 }

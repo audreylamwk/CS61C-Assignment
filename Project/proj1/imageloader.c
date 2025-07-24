@@ -32,8 +32,8 @@ Image *readData(char *filename)
 	}
 	Image * image = malloc(sizeof(Image));
 	// read or skip type
-	char* type;
-	fscanf(fp, "%s", type);
+	char type;
+	fscanf(fp, "%s", &type);
 	int width;
 	int height;
 	fscanf(fp, "%d %d",&width, &height);
